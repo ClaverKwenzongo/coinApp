@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ClaverKwenzongo/coinApp#readme",
   "dependencies": {
-    "@apollo/client": "^3.3.11"
+    "@apollo/client": "^3.3.11",
+    "apollo-server": "^2.21.0",
+    "graphql": "^15.5.0"
   }
 }
