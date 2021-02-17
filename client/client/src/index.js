@@ -13,6 +13,7 @@ const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });
 
+// ...ApolloClient instantiated here...
 
 
 ReactDOM.render(
@@ -33,6 +34,20 @@ ReactDOM.render(
     `
   })
   .then(result => console.log(result));
+
+
+client
+  .query({
+    query: gql`
+      query TestQuery {
+        getcoins {
+          id
+        }
+      }
+    `
+  })
+  .then(result => console.log(result));
+
 
 
 /*
