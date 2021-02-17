@@ -1,6 +1,6 @@
 import { ApolloClient, gql, ApolloProvider } from "@apollo/client";
 import { InMemoryCache } from "apollo-cache-inmemory";
-import Page from "./page";
+import Pages from "./pages";
 import React from "react";
 import ReactDOM from "react-dom";
 //mport App from "./App"
@@ -19,7 +19,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Page />
+    <Pages />
     
   </ApolloProvider>,
   document.getElementById('root')
