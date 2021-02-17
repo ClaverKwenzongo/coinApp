@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
+
+import { CoinTile, Header, Button, Loading } from "../components";
 
 export const COIN_TILE_DATA = gql`
   fragment CoinTile on Launch {
@@ -24,8 +26,28 @@ export const GET_COINS = gql`
 `;
 
 
-const Coins = () => {
+/*const Coins = () => {
   return <div />;
-};
+};*/
 
-export default Launches;
+const Coins = () => {
+    const { data, loading, error } = useQuery(GET_COINS);
+  
+    if (loading) return <Loading />;
+    if (error) return <p>ERROR</p>;
+    if (!data) return <p>Not found</p>;
+  
+    return (
+      <Fragment>
+        <Header />
+        {data.coins &&
+          data.coins.coins &&
+          data.coins.coins.map(coin => (
+            <CoinTile key={coin.id} coin={coin} />
+          ))}
+      </Fragment>
+    );
+  };
+  
+
+export default Coins;
