@@ -50,4 +50,4 @@ const Coins = () => {
   };
   
 
-export default Coins;
+export default pages;
