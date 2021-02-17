@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ClaverKwenzongo/coinApp/issues"
   },
-  "homepage": "https://github.com/ClaverKwenzongo/coinApp#readme"
+  "homepage": "https://github.com/ClaverKwenzongo/coinApp#readme",
+  "dependencies": {
+    "@apollo/client": "^3.3.11"
+  }
 }
