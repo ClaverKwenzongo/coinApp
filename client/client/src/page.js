@@ -5,7 +5,7 @@ import { gql, useQuery } from "@apollo/client";
 import { CoinTile, Header, Button, Loading } from "../components";
 
 export const COIN_TILE_DATA = gql`
-  fragment CoinTile on Launch {
+  fragment CoinTile on Coin {
     __typename
     id
     symbol
@@ -14,7 +14,7 @@ export const COIN_TILE_DATA = gql`
 
 export const GET_COINS = gql`
   query GetCoinList($after: String) {
-    coins(after: $after) {
+    getcoins(after: $after) {
       cursor
       hasMore
       coins {
